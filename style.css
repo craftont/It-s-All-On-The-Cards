@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+header, footer {
+    background: #f0f0f0;
+    text-align: center;
+    padding: 0.5rem;
+}
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+header nav {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    min-height: calc(100vh - 80px); 
+}
+main {
+    flex-grow: 1; 
+    padding: 1rem;
+}
+aside {
+    background: #e9ecef;
+    padding: 1rem;
+    width: 200px;
+}
+.cuisine-gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: flex-start; 
+    gap: 20px; 
+    padding: 20px;
+}
+.world-foods-img {
+    max-width: 600px;
+    margin: 30px;
+}
+.cuisine-card {
+    margin: 30px;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    overflow: hidden; 
+}
+.cuisine-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.cuisine-card:hover .cuisine-card-inner {
+    transform: rotateY(180deg);
+}
+.cuisine-card-front, .cuisine-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cuisine-card-front {
+    background-color: #fff;
+    color: black;
+}
+.cuisine-img {
+    width: 100%;
+    height: 60%;  
+    object-fit: cover;  
+}
+.cuisine-card-back {
+    background-color: #f7f7f7;
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav li {
+    margin: 0 10px; 
+}
+nav a {
+    text-decoration: none;
+    color: #004aad;
+    padding: 0.5em;
+}
+@media (max-width: 768px) {
+    .container, nav ul {
+        flex-direction: column;
+    }
+    .container {
+        align-items: center;
+    }
+}
